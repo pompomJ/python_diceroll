@@ -1,0 +1,14 @@
+# サイコロの各目が出る確率を求める
+
+import random, collections
+
+n = 100
+result = []
+
+for _ in range(n):
+    dice_roll = random.randint(1, 6)
+    result.append(dice_roll)
+
+result.sort()
+for num, count in collections.Counter(result).items():
+    print(num, f"{count / n:.3%}")　# 小数点以下第３位までのパーセント表記
